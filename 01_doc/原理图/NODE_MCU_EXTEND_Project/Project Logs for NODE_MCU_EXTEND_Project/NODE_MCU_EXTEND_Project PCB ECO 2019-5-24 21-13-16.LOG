@@ -1,0 +1,6 @@
+Change Component Designator: OldDesignator= NewDesignator=m1
+Change Component Designator: OldDesignator= NewDesignator=OLED1
+Change Component Designator: OldDesignator= NewDesignator=SD_CARD1
+Added Component: Designator=t1(0603P - duplicate)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=P32 Pin=t1-1

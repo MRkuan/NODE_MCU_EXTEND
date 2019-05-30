@@ -1,0 +1,3 @@
+Change Component Footprint: Designator=t1 Old Footprint=0603P - duplicate New Footprint=touch_key
+Change Component Library : Designator=t1 Old Library= New Library=NODE_MCU_EXTEND_Project.SchLib
+Added Room: Name=NODE_MCU_EXTEND_Project

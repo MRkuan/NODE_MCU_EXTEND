@@ -1,0 +1,18 @@
+Change Component Designator: OldDesignator= NewDesignator=OLED1
+Change Component Designator: OldDesignator= NewDesignator=P1
+Change Component Designator: OldDesignator= NewDesignator=P2
+Change Component Designator: OldDesignator= NewDesignator=SD_CARD1
+Change Component Designator: OldDesignator=1 NewDesignator=K1
+Change Component Designator: OldDesignator=2 NewDesignator=K2
+Change Component Designator: OldDesignator=3 NewDesignator=K3
+Change Component Designator: OldDesignator=4 NewDesignator=K4
+Added Pin To Net: NetName=GND Pin=C1-2
+Added Member To Class: ClassName=NODE_MCU_EXTEND_Project Member=Component K1 KEY_M
+Added Member To Class: ClassName=NODE_MCU_EXTEND_Project Member=Component K2 KEY_M
+Added Member To Class: ClassName=NODE_MCU_EXTEND_Project Member=Component K3 KEY_M
+Added Member To Class: ClassName=NODE_MCU_EXTEND_Project Member=Component K4 KEY_M
+Added Member To Class: ClassName=NODE_MCU_EXTEND_Project Member=Component OLED1 OLED12864
+Added Member To Class: ClassName=NODE_MCU_EXTEND_Project Member=Component P1 
+Added Member To Class: ClassName=NODE_MCU_EXTEND_Project Member=Component P2 HEAD1*19
+Added Member To Class: ClassName=NODE_MCU_EXTEND_Project Member=Component SD_CARD1 
+Added Room: Name=NODE_MCU_EXTEND_Project
