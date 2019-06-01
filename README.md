@@ -20,24 +20,24 @@ NODE_MCU_EXTEND扩展板 是基于 [NODE_MCU](http://www.nodemcu.com/index_cn.ht
 
 组件 | PIN |  备注  
 -|-|-
-OLED12864 | - | - |
-- | GPIO14 | SPI_CLK |
- -| GPIO13| SPI_MOSI|
-  -| -|MISO可以不接 |
--| GPIO26|RESET |
--| GPIO27|DC |
--| GPIO5|CS |
-TF_CARD | - | - |
- -| GPIO6 | CLK|
-  -| GPIO11 |CMD/DI0|
--| GPIO8|DAT1 |
--| GPIO9|DAT2 |
--| GPIO10|DAT3 |
-key | - | - |
- -| GPIO15 | KEY1|
-  -| GPIO14 |KEY2|
--| GPIO16|KEY3 |
--| GPIO17|KEY4 |
--| GPIO32|touchkey |
-motor | - | - |
- -| GPIO12 | 使用PWM驱动 频率在 1HZ-10HZ|
+OLED12864 | - | - 
+~ | GPIO14 | SPI_CLK 
+ -| GPIO13| SPI_MOSI
+  -| -|MISO可以不接 
+-| GPIO26|RESET 
+-| GPIO27|DC 
+-| GPIO5|CS 
+TF_CARD | - | - 
+ -| GPIO6 | CLK
+  -| GPIO11 |CMD/DI0
+-| GPIO8|DAT1 
+-| GPIO9|DAT2 
+-| GPIO10|DAT3 
+key | - | - 
+ -| GPIO15 | KEY1
+  -| GPIO14 |KEY2
+-| GPIO16|KEY3 
+-| GPIO17|KEY4 
+-| GPIO32|touchkey 
+motor | - | - 
+ -| GPIO12 | 使用PWM驱动 频率在 1HZ-10HZ
