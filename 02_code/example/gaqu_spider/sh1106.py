@@ -145,6 +145,24 @@ class SH1106:
     def invert(self, invert):
         self.write_cmd(_SET_NORM_INV | (invert & 1))
 
+    #add new fucntion to display pic
+    #only support  horizontal sweep 
+    def diplay_pic(self, x0, y0, x1, y1,byte_arr):
+        x = (x1-x0)//8
+        X_left = (x1-x0)%8
+        y = (y1-y0)
+        byte_arr_cnt = 0;
+        for y_cnt in range(y):
+            # print (byte_arr_cnt)
+            for x_cnt in range(x):
+                for pixel_cnt in range(8):
+                    self.pixel(x0+x_cnt*8+pixel_cnt,y0+y_cnt,(byte_arr[byte_arr_cnt]>>(7-pixel_cnt)&1))
+                byte_arr_cnt+=1
+            if (0!=X_left):    
+                for X_left_cnt in range(X_left):
+                    self.pixel(x0+x*8+X_left_cnt,y0+y_cnt,(byte_arr[byte_arr_cnt]>>(7-X_left_cnt)&1))
+                byte_arr_cnt+=1
+
     def show(self):
         for page in range(self.height // 8):
             self.write_cmd(_SET_PAGE_ADDRESS | page)

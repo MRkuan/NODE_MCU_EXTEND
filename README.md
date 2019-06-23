@@ -18,28 +18,41 @@ NODE_MCU_EXTEND扩展板 是基于 [NODE_MCU](http://www.nodemcu.com/index_cn.ht
 
 > PIN 分配图
 
-组件 | PIN |  备注  
+**SD卡功能作废**
+因为官方明确
+
+> 管脚 SCK/CLK， SDO/SD0， SDI/SD1， SHD/SD2， SWP/SD3，和 SCS/CMD，即 GPIO6 至 GPIO11 用于连接模组上
+> 集成的 SPI flash，不建议用于其他功能
+> 
+组件 | PIN |  备注
 -|-|-
-OLED12864 | - | - 
-~ | GPIO14 | SPI_CLK 
+OLED12864 | - | -
+~ | GPIO14 | SPI_CLK
  -| GPIO13| SPI_MOSI
-  -| -|MISO可以不接 
--| GPIO26|RESET 
--| GPIO27|DC 
--| GPIO5|CS 
-TF_CARD | - | - 
+  -| -|MISO可以不接
+-| GPIO26|RESET
+-| GPIO27|DC
+-| GPIO5|CS
+TF_CARD(SDIO) | - | -
  -| GPIO6 | CLK
   -| GPIO11 |CMD/DI0
--| GPIO8|DAT1 
--| GPIO9|DAT2 
--| GPIO10|DAT3 
-key | - | - 
+  -| GPIO7|DAT0
+-| GPIO8|DAT1
+-| GPIO9|DAT2
+-| GPIO10|DAT3
+-| GPIO0|SD_DET
+TF_CARD(SPI) | - | -
+-| GPIO10|CS
+-| GPIO11|MOSI
+-| GPIO6|CLK
+-| GPIO7|MISO
+key | - | -
  -| GPIO15 | KEY1
   -| GPIO4 |KEY2
--| GPIO16|KEY3 
--| GPIO17|KEY4 
--| GPIO32|touchkey 
-motor | - | - 
+-| GPIO16|KEY3
+-| GPIO17|KEY4
+-| GPIO32|touchkey
+motor | - | -
  -| GPIO12 | 使用PWM驱动 频率在 1HZ-10HZ
 
  ## 2.测试
@@ -64,6 +77,10 @@ esp32 micropython [固件地址](http://www.micropython.org/download)
 
 > esptool.py --chip esp32 --port COM5 --baud 460800 write_flash -z 0x1000 esp32-20190605-v1.11-37-g62f004ba4.bin
 
+或者
+
+> esptool.py --chip esp32 --port COM5 --baud 460800 write_flash -z 0x1000 esp32spiram-20190606-v1.11-37-g62f004ba4.bin
+
 ![刷固件](03_misc/刷固件.png)
 
 ### 2.2 使用 uPyLoader 同步程序
@@ -75,9 +92,9 @@ esp32 micropython [固件地址](http://www.micropython.org/download)
 ![upyloder_init](03_misc/upyloder_init.png)
 
 ## 3.参考
-参考地址  |  备注  
+参考地址  |  备注
 -|-
-[MicroPython入坑记（二）刷固件（ESP8266 ESP32）](https://www.cnblogs.com/yafengabc/p/8681380.html) | 刷micropython固件参考 
+[MicroPython入坑记（二）刷固件（ESP8266 ESP32）](https://www.cnblogs.com/yafengabc/p/8681380.html) | 刷micropython固件参考
 [micropython](https://github.com/micropython/micropython) | micropython官方地址
 [esp32 micropython](http://docs.micropython.org/en/latest/esp32/general.html) | esp32 micropython使用API
 [SH1106](https://github.com/robert-hh/SH1106) | SH1106 micropython 固件
